@@ -1,5 +1,58 @@
 # ------------------------------------------------------------------------
-# Sample Make Targets
+# Example AWS CDK Targets
+# ------------------------------------------------------------------------
+
+# Create a new CDK app in Typescript
+new-cdk-app-typescript: ## Create a new typescript-based CDK app
+	@./scripts/banner.sh
+	@echo -e "[${GREEN}INFO${NC}] - Create a new CDK app in Typescript"
+	@mkdir cdk && cd cdk && cdk init app --language typescript
+
+# Deploying stacks with the CDK requires special dedicated AWS CDK resources 
+# to be provisioned. The cdk bootstrap command creates the necessary resources 
+# for you.
+bootstrap: ## Bootstrap CDK stack
+	@./scripts/banner.sh
+	@echo -e "[${GREEN}INFO${NC}] - Bootstrap CDK stack"
+	@cd cdk && cdk bootstrap
+
+# To see a list of the IDs of the stacks in your AWS CDK application
+list: ## List CDK stack
+	@./scripts/banner.sh
+	@echo -e "[${GREEN}INFO${NC}] - List CDK stack"
+	@cd cdk && cdk list
+
+# Synthesizes a stack defined in your app into a CloudFormation template
+synth: ## Synth CDK stack
+	@./scripts/banner.sh
+	@echo -e "[${GREEN}INFO${NC}] - Synth CDK stack"
+	@cd cdk && cdk synth
+
+# Deploys stack to your AWS account
+deploy-no-approval-rollback: ## Deploy CDK stack without approval and rollback
+	@./scripts/banner.sh
+	@echo -e "[${GREEN}INFO${NC}] - Deploy CDK stack without approval"
+	@cd cdk && cdk deploy --no-rollback --require-approval never
+
+deploy-no-rollback: ## Deploy CDK stack with approval and without rollback
+	@./scripts/banner.sh
+	@echo -e "[${GREEN}INFO${NC}] - Deploy CDK stack"
+	@cd cdk && cdk deploy --no-rollback
+
+deploy: ## Deploy CDK stack with approval and rollback
+	@./scripts/banner.sh
+	@echo -e "[${GREEN}INFO${NC}] - Deploy CDK stack"
+	@cd cdk && cdk deploy
+
+# Compares the current version of a stack (and its dependencies) defined in your app 
+# with the already-deployed versions
+diff: ## Diff CDK stack
+	@./scripts/banner.sh
+	@echo -e "[${GREEN}INFO${NC}] - Deploy CDK stack"
+	@cd cdk && cdk diff
+
+# ------------------------------------------------------------------------
+# Example CloudFormation Targets
 # ------------------------------------------------------------------------
 
 sample-cfn-deployment-target: ## Target title

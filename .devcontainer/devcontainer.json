@@ -21,7 +21,7 @@
 				"esbenp.prettier-vscode",
 				"davidanson.vscode-markdownlint",
 				"foxundermoon.shell-format",
-				"tyriar.sort-lines", 
+				"tyriar.sort-lines",
 				"redhat.vscode-yaml"
 			]
 		}

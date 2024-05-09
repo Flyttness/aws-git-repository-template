@@ -28,7 +28,11 @@ In addition the following Visual Studio plugins have been pre-installed:
 - indent-rainbox
 - Indenticator
 - Markdown Preview Enhanced
+- markdownlint
 - Prettier - Code formatter
+- shell-format
+- Sort lines
+- YAML
 
 Happy coding.
 

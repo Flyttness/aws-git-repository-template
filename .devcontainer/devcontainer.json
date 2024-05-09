@@ -18,7 +18,11 @@
 				"oderwat.indent-rainbow",
 				"sirtori.indenticator",
 				"shd101wyy.markdown-preview-enhanced",
-				"esbenp.prettier-vscode"
+				"esbenp.prettier-vscode",
+				"davidanson.vscode-markdownlint",
+				"foxundermoon.shell-format",
+				"tyriar.sort-lines",
+				"redhat.vscode-yaml"
 			]
 		}
 	}
